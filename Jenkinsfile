@@ -15,14 +15,21 @@ pipeline {
             steps {
                 //This sh step runs the Python command to compile your application and
                 //its calc library into byte code files, which are placed into the sources workspace directory
-                sh 'python -m py_compile sources/add2vals.py sources/calc.py'
+                //sh 'python -m py_compile sources/add2vals.py sources/calc.py'
                 //This stash step saves the Python source code and compiled byte code files from the sources
                 //workspace directory for use in later stages.
-                stash(name: 'compiled-results', includes: 'sources/*.py*')
+                
+
+                curl -X GET -u "apikey:$APIKEY" "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/61b4ec92-bb32-4c6e-878b-ac7030a7f439/v1/customizations?language=en-US"
+
+
+                //stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
+}
+}
 
-        stage('Test') {
+/*        stage('Test') {
             agent {
                 docker {
                     //This image parameter downloads the qnib:pytest Docker image and runs this image as a
@@ -84,4 +91,4 @@ pipeline {
     }
 
 }
-
+*/
