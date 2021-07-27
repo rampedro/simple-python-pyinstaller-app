@@ -23,8 +23,7 @@ pipeline {
         }
 }
 
-}
-/*        stage('Test') {
+        stage('Test') {
             agent {
                 docker {
                     //This image parameter downloads the qnib:pytest Docker image and runs this image as a
@@ -50,7 +49,11 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+
+}
+
+
+/* stage('Deliver') {
                     agent any
                     //This environment block defines two variables which will be used later in the 'Deliver' stage.
                     environment {
