@@ -21,7 +21,7 @@ pipeline {
                 stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
-        stage('Test') {
+/*        stage('Test') {
             agent {
                 docker {
                     //This image parameter downloads the qnib:pytest Docker image and runs this image as a
@@ -80,4 +80,7 @@ pipeline {
                     }
         }
     }
+
 }
+
+}*/
