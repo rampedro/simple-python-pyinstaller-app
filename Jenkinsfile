@@ -20,7 +20,7 @@ pipeline {
                 //workspace directory for use in later stages.
                 
 // Getting the list of all models
-               //sh 'curl -X GET -u "apikey:$APIKEY" "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/61b4ec92-bb32-4c6e-878b-ac7030a7f439/v1/customizations?language=en-US"'
+               sh 'curl -X GET -u "apikey:$APIKEY" "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/61b4ec92-bb32-4c6e-878b-ac7030a7f439/v1/customizations?language=en-US"'
 
 
 //               stash(name: 'compiled-results', includes: 'sources/*.py*')
